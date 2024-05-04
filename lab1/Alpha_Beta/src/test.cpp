@@ -57,7 +57,7 @@ int alphaBeta(GameTreeNode& node, int alpha, int beta, int depth, bool isMaximiz
 
 // 返回值为搜索部分的时间
 int work(int file_num) {
-    std::string base = "E:\\MyCode\\ustc_ai_intro\\lab1\\Alpha_Beta\\"; //"../";
+    std::string base = "../";
     std::string input_file = base + "input/" + std::to_string(file_num) + ".txt";
     std::string output_file = base + "output/output_" + std::to_string(file_num) + ".txt";
     std::ifstream file(input_file);
