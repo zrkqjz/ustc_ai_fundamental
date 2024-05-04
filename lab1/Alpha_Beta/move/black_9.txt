@@ -1,0 +1,60 @@
+init: 5 1
+next: 5 2
+score -1
+init: 5 1
+next: 5 0
+score 9
+init: 5 1
+next: 4 1
+score 0
+init: 8 5
+next: 7 5
+score 3
+init: 8 5
+next: 6 5
+score 3
+init: 8 5
+next: 5 5
+score 6
+init: 8 5
+next: 4 5
+score 7
+init: 8 5
+next: 3 5
+score 6
+init: 8 5
+next: 2 5
+score 3
+init: 8 5
+next: 1 5
+score 3
+init: 8 5
+next: 0 5
+score 0
+init: 8 5
+next: 8 6
+score -2
+init: 8 5
+next: 8 7
+score -2
+init: 8 5
+next: 8 8
+score -2
+init: 8 5
+next: 8 9
+score -2
+init: 8 5
+next: 8 4
+score 0
+init: 8 5
+next: 8 3
+score -4
+init: 8 5
+next: 8 2
+score -10
+init: 8 5
+next: 8 1
+score -3
+init: 8 5
+next: 8 0
+score -14

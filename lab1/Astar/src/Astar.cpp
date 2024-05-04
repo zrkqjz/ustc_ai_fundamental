@@ -49,6 +49,7 @@ int Heuristic_Funtion(const Search_Cell *a, const int energy)
 {
     int manhattan_distance = abs(a->h - end_point.first) + abs(a->g - end_point.second);
     return manhattan_distance;
+    //return 0;
 }
 
 // 自定义比较函数对象，按照 Search_Cell 结构体的 g + h 属性进行比较
@@ -62,12 +63,12 @@ struct CompareF {
 // TODO: 定义启发式函数
 
 
-void Astar_search(const string input_file, int &step_nums, string &way)
+int Astar_search(const string input_file, int &step_nums, string &way)
 {
     ifstream file(input_file);
     if (!file.is_open()) {
         cout << "Error opening file!" << endl;
-        return;
+        return -1;
     }
 
     string line;
@@ -127,13 +128,14 @@ void Astar_search(const string input_file, int &step_nums, string &way)
     
 
     bool find_end = false;
-
+    int total_step = 0;
     while(!open_list.empty())
     {
         // TODO: A*搜索过程实现
         Search_Cell *n = open_list.top();
         open_list.pop();
         close_list.insert(n);
+        total_step += 1;
 
         // judge if current_cell is the end point
         if(n->h == end_point.first && n->g == end_point.second)
@@ -230,7 +232,7 @@ void Astar_search(const string input_file, int &step_nums, string &way)
         delete[] Map[i];
     }
     delete[] Map;
-    return;
+    return total_step;
 }
 
 void output(const string output_file, int &step_nums, string &way)
@@ -257,13 +259,16 @@ int main(int argc, char *argv[])
 {
     string input_base = "../input/input_";
     string output_base = "../output/output_";
+    int num_step = 0;
     // input_0为讲义样例，此处不做测试
     for(int i = 0; i < 11; i++)
     {
         int step_nums = -1;
         string way = "";
-        Astar_search(input_base + to_string(i) + ".txt", step_nums, way);
+        num_step = Astar_search(input_base + to_string(i) + ".txt", step_nums, way);
         output(output_base + to_string(i) + ".txt", step_nums, way);
     }
+    cout << "num_step for all input with manhattan distance as Heuristic: " << num_step << endl;
+    // cout << "num_step for all input without Heuristic: " << num_step << endl;
     return 0;
 }

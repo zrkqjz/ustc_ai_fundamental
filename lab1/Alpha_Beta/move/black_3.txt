@@ -1,0 +1,12 @@
+init: 4 1
+next: 5 0
+score -3
+init: 4 1
+next: 3 0
+score -3
+init: 3 2
+next: 3 1
+score 1
+init: 3 2
+next: 4 2
+score 0

@@ -1,0 +1,30 @@
+init: 5 2
+next: 5 1
+score 10
+init: 5 2
+next: 6 2
+score -10
+init: 5 2
+next: 4 2
+score 0
+init: 4 3
+next: 4 2
+score 13
+init: 4 3
+next: 5 3
+score -2
+init: 4 3
+next: 3 3
+score -2
+init: 5 9
+next: 5 8
+score -9
+init: 5 9
+next: 4 9
+score 4
+init: 6 9
+next: 8 7
+score -2
+init: 6 9
+next: 4 7
+score 3
